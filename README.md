@@ -28,7 +28,7 @@ O sistema oferece um menu com as opções:
 [x] Sair
 
 - Depósitos são realizados com valores maiores que 0, e o saldo é atualizado automaticamente.
-- aques respeitam um limite diário de 3 transações e um valor máximo de R$500 por transação.
+- Saques respeitam um limite diário de 3 transações e um valor máximo de R$500,00 por transação.
 - O extrato exibe todas as movimentações feitas no sistema, com valores de depósitos e saques.
 
 
