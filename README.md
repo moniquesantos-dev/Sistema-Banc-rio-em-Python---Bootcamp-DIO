@@ -93,4 +93,4 @@ Atendimento finalizado!
 ```
 
 ## Créditos
-Desenvolvido por Monique Santos durante o Bottcamp: Vivo - Python AI Backend Developer, da DIO.
+Desenvolvido por Monique Santos durante o Bootcamp: Vivo - Python AI Backend Developer, da DIO.
