@@ -1,12 +1,3 @@
-'''Projeto - Sistema Bancário em Python - DIO Academy
-Desafio: Implementar apenas 3 operações: depósito, saque e extrato.
-Operação depósito: Devem ser armazenados em uma variável e exibidos na operação de extrato.
-Operação saque: Permitir realizar 3 saques diários com limite máximo de R$ 500,00 por saque
-    Caso o usuário não tenha saldo em conta o sistema deve exibir uma mensagem informando que não será possível sacar o dinheiro por falta de saldo. 
-    Todos os saques devem ser armazenados em uma viarável e exibidos na operação de extrato.
-Operação extrato: Deve listar todos os depósitos e saques realizados em conta. No fim da listagem deve ser exibido o saldo atual em conta. 
-    Os valores devem ser exibidos utilizando o formato R$ xxx.xx. 
-'''
 menu = """
 
 [d] Depositar
