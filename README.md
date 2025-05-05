@@ -1,96 +1,93 @@
 # Sistema Bancário em Python
 
-Um **Sistema Bancário** desenvolvido durante o **Bootcamp da DIO** utilizando a linguagem **Python**. Este sistema permite a realização de depósitos, saques e visualização de extrato de uma conta bancária, com controle de limites de saque diário e saldo disponível.
+Este é um projeto de um sistema bancário simples, desenvolvido em Python, que simula operações básicas de um banco. O programa é executado via terminal e oferece funcionalidades como depósito, saque, extrato, criação de usuários e contas, e listagem de contas existentes.
 
 ## Funcionalidades
 
-- **Depositar**: Permite ao usuário realizar depósitos na conta.
-- **Sacar**: Permite ao usuário realizar saques, respeitando limites de valor e quantidade diária de saques.
-- **Extrato**: Exibe o extrato bancário, mostrando todas as operações realizadas.
-- **Limites de Saque**: Limita o valor máximo de cada saque e a quantidade de saques por dia.
+O menu principal apresenta as seguintes opções para o usuário:
 
-## Tecnologias Utilizadas
+- `[d]` Depositar
+- `[s]` Sacar
+- `[e]` Extrato
+- `[nu]` Novo usuário
+- `[nc]` Criar conta
+- `[lc]` Listar contas
+- `[x]` Sair
 
-- **Python** (versão 3.x)
-- **Git** para controle de versão
+## ⚙️ Lógica do Projeto
 
+O projeto utiliza estruturas como listas, dicionários, funções com diferentes tipos de parâmetros e tratamento de exceções. O fluxo principal acontece dentro da função `main()`, onde o sistema executa em loop até que o usuário opte por sair.
 
-# Como Funciona
+## 🔧 Funções Criadas
 
-O sistema oferece um menu com as opções:
+### `menu()`
+Exibe o menu de opções e retorna a escolha do usuário.
 
-[d] Depositar
+---
 
-[s] Sacar
+### `deposito(saldo, valor, extrato, /)`
+Realiza o depósito de um valor positivo no saldo e adiciona uma descrição ao extrato.
 
-[e] Extrato
+- **Argumentos position-only** (`/`):
+  - `saldo`
+  - `valor`
+  - `extrato`
 
-[x] Sair
+---
 
-- Depósitos são realizados com valores maiores que 0, e o saldo é atualizado automaticamente.
-- Saques respeitam um limite diário de 3 transações e um valor máximo de R$500,00 por transação.
-- O extrato exibe todas as movimentações feitas no sistema, com valores de depósitos e saques.
+### `saque(*, saldo, extrato, LIMITE_TOTAL_SAQUE, numero_saques, LIMITE_SAQUES, valor_retirado)`
+Realiza um saque, respeitando os limites de saldo, valor máximo por saque e quantidade máxima de saques.
 
+- **Argumentos keyword-only** (`*`):
+  - `saldo`
+  - `extrato`
+  - `LIMITE_TOTAL_SAQUE`
+  - `numero_saques`
+  - `LIMITE_SAQUES`
+  - `valor_retirado`
 
-## Exemplos de Saída:
+---
 
-### 1. Menu Inicial
+### `relatorio_financeiro(saldo, /, *, extrato)`
+Exibe o extrato das transações realizadas.
 
-```sh
-[d] Depositar
-[s] Sacar
-[e] Extrato
-[x] Sair
+- `saldo` é **position-only** (`/`)
+- `extrato` é **keyword-only** (`*`)
 
-=> Escolha uma das opções:
-```
-### 2. Depósito Realizado
+---
 
-```sh
-Qual valor deseja depositar? R$500
-O depósito de R$500.00 foi realizado. Verifique seu extrato caso queira confirmar o valor em conta.
-```
+### `criar_usuario(usuarios)`
+Solicita os dados do usuário (CPF, nome, data de nascimento, endereço) e adiciona à lista de usuários, caso o CPF ainda não esteja cadastrado.
 
-### 3. Saque Realizado
+---
 
-- Saque dentro do limite:
+### `filtrar_usuario(CPF, usuarios)`
+Filtra a lista de usuários e retorna aquele com o CPF correspondente (ou `None` se não existir).
 
-```sh
-Qual valor deseja sacar? R$200
-Seu saque de R$200.00 foi realizado com sucesso!
-Você ainda pode realizar 2 saques hoje.
-```
+---
 
-- Saque acima do limite:
+### `criar_conta(AGENCIA, numero_conta, usuarios)`
+Cria uma nova conta bancária para um usuário existente.
 
-```sh
-Qual valor deseja sacar? R$600
-O limite máximo para cada saque é de R$500.00
-```
+---
 
-- Saldo insuficiente:
+### `listar_contas(contas_corrente, usuarios)`
+Exibe todas as contas de um determinado CPF.
 
-```sh
-Qual valor deseja sacar? R$3000
-Você não possui saldo suficiente para ser sacado.
-```
+---
 
-### 4. Extrato Bancário
+### `main()`
+Executa o loop principal do programa, gerenciando as interações do usuário com o sistema bancário.
 
-```sh
-============ EXTRATO BANCÁRIO ============
-Depósito realizado: R$500.00
-Saque realizado: -R$200.00
+##  Conceitos Utilizados
 
-Saldo atual: R$2300.00
-==========================================
-```
+- Argumentos position-only (`/`) e keyword-only (`*`)
+- Listas e dicionários
+- Laços de repetição e condicionais
+- Manipulação de strings e números
+- Boas práticas como modularização do código
 
-### 5. Opção de Sair
-
-```sh
-Atendimento finalizado!
-```
 
 ## Créditos
 Desenvolvido por Monique Santos durante o Bootcamp: Vivo - Python AI Backend Developer, da DIO.
+
